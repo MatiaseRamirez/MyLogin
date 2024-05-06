@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1877F2">
+
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="REGISTRO"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"/>
+
+
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="459dp"
+        android:layout_height="50dp"
+        android:backgroundTint="#C6C0C0"
+        android:ems="10"
+        android:inputType="textEmailAddress"
+        android:text="Correo Electronico"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#DCD4D4"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="259dp" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#E4D7D7"
+        android:hint="Nombre Completo"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#302D2D"
+        android:textColorHighlight="#AF9393"
+        android:textColorHint="#ECD6D6"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="-1dp"
+        tools:layout_editor_absoluteY="178dp" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Registrate"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword3"
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPassword3"
+        app:layout_constraintEnd_toEndOf="@+id/editTextTextPassword3"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Ingrese su contraseña"
+        android:inputType="textPassword"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColorHint="#C3B5B5"
+        android:gravity="center"
+        tools:layout_editor_absoluteX="120dp"
+        tools:layout_editor_absoluteY="318dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/icon_account_circle"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="70dp" />
+
+
+
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/sym_action_email"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="268dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_lock_idle_lock"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="318dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
