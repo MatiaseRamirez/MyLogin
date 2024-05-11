@@ -64,14 +64,14 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 replaceFragment(PhoneFragment())
             }
             R.id.nav_item_favorites -> {
-            replaceFragment(FavoritesFragment())
+                replaceFragment(FavoritesFragment())
             }
             R.id.nav_item_claims -> {
                 replaceFragment(ClaimsFragment())
             }
 
             R.id.nav_item_singoff -> {
-                Toast.makeText(this, "Cerrando Sesion", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Errand Session", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this,MainActivity::class.java)
                 startActivity(intent)
             }

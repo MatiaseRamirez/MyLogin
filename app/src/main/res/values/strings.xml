@@ -8,4 +8,18 @@
     <string name="nav_drawer_home_open">Open</string>
     <string name="nav_drawer_home_close">Close</string>
 
+    <string name="direccion_text">Dirección</string>
+    <string name="nombre_direccion_text">Nombre de la dirección</string>
+    <string name="hint_direccion">Ingrese la dirección</string>
+    <string name="altura_text">Altura</string>
+    <string name="hint_altura">Ingrese la altura</string>
+    <string name="cp_text">Codigo Postal</string>
+    <string name="hint_cp">Ingrese el codigo postal</string>
+    <string name="provincia_text">Provincia</string>
+    <string name="hint_provincia">Ingrese la provincia</string>
+
+
+
+
+
 </resources>

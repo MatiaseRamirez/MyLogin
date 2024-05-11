@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import mylogin.com.databinding.FragmentAddresBinding
 
+
 class AddresFragment : Fragment() {
 
     private lateinit var binding: FragmentAddresBinding
