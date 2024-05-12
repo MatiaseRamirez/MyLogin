@@ -45,7 +45,8 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
        val navigationView = binding.navigationViewHome
         navigationView.setNavigationItemSelectedListener(this)
 
-
+        // MenuFragment por defecto al iniciar la aplicación en el metodo OnCreate
+        replaceFragment(MenuFragment())
 
     }
 
