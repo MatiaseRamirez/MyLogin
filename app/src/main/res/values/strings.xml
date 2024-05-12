@@ -8,6 +8,7 @@
     <string name="nav_drawer_home_open">Open</string>
     <string name="nav_drawer_home_close">Close</string>
 
+    <!--  Strings de section Direccion-->
     <string name="direccion_text">Dirección</string>
     <string name="nombre_direccion_text">Nombre de la dirección</string>
     <string name="hint_direccion">Ingrese la dirección</string>
