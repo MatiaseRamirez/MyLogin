@@ -8,11 +8,14 @@
     <string name="nav_drawer_home_open">Open</string>
     <string name="nav_drawer_home_close">Close</string>
 
-    <!--  Strings de section Menu Burgas-->
-    <string name="image_description">Mega Burga</string>
-    <string name="menu_title">Menú de Burgas</string>
-    <string name="price_text">$100</string>
-    <string name="buy_button_text">Comprar</string>
+    <!--  Strings de section Tarjetas-->
+    <string name="tarjetas_text">Tarjetas</string>
+    <string name="card_number_label">Número de Tarjeta:</string>
+    <string name="enter_card_number">Ingresa el número de tarjeta</string>
+    <string name="expiry_date_label">Fecha de Vencimiento:</string> <!-- Agrega esta línea -->
+    <string name="enter_expiry_date">Ingresa la fecha de vencimiento</string>
+    <string name="card_holder_name_label">Nombre del Titular:</string>
+    <string name="enter_card_holder_name">Ingresa el nombre del titular</string>
 
     <!--  Strings de section Direccion-->
     <string name="direccion_text">Dirección</string>
@@ -24,6 +27,17 @@
     <string name="hint_cp">Ingrese el codigo postal</string>
     <string name="provincia_text">Provincia</string>
     <string name="hint_provincia">Ingrese la provincia</string>
+
+    <!--  Strings de section Telefono-->
+    <string name="phone_text">Teléfono</string>
+    <string name="phone_number_label">Número de Teléfono:</string>
+    <string name="enter_phone_number">Ingresa el número de teléfono</string>
+
+    <!--  Strings de section Menu Burgas-->
+    <string name="image_description">Mega Burga</string>
+    <string name="menu_title">Menú de Burgas</string>
+    <string name="price_text">$100</string>
+    <string name="buy_button_text">Comprar</string>
 
 
 </resources>
