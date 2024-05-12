@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
@@ -8,16 +7,86 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".fragments.FavoritesFragment">
 
+    <!-- Encabezado -->
     <TextView
+        android:id="@+id/favorites_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Favoritos"
-        android:textSize="40dp"
-        android:textColor="@color/red"
+        android:text="@string/title_save_favorite_burger"
+        android:textSize="32sp"
+        android:textColor="@android:color/black"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp"/>
+
+    <!-- Campo para ingresar el nombre de la hamburguesa favorita -->
+    <TextView
+        android:id="@+id/favorite_burger_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_favorite_burger"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/favorites_header"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <EditText
+        android:id="@+id/favorite_burger_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_enter_favorite_burger"
+        android:inputType="text"
+        android:autofillHints="favoriteBurgerName"
+        app:layout_constraintTop_toBottomOf="@id/favorite_burger_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- Campo para agregar notas sobre la hamburguesa favorita -->
+    <TextView
+        android:id="@+id/favorite_notes_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_favorite_notes"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/favorite_burger_input"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"/>
+
+    <EditText
+        android:id="@+id/favorite_notes_input"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/hint_enter_favorite_notes"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:autofillHints="favoriteBurgerNotes"
+        app:layout_constraintTop_toBottomOf="@id/favorite_notes_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
+
+    <!-- Botón para guardar la hamburguesa favorita -->
+    <Button
+        android:id="@+id/save_favorite_burger_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button_save_favorite_burger"
+        app:layout_constraintTop_toBottomOf="@id/favorite_notes_input"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
