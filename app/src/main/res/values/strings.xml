@@ -8,6 +8,12 @@
     <string name="nav_drawer_home_open">Open</string>
     <string name="nav_drawer_home_close">Close</string>
 
+    <!--  Strings de section Menu Burgas-->
+    <string name="image_description">Mega Burga</string>
+    <string name="menu_title">Menú de Burgas</string>
+    <string name="price_text">$100</string>
+    <string name="buy_button_text">Comprar</string>
+
     <!--  Strings de section Direccion-->
     <string name="direccion_text">Dirección</string>
     <string name="nombre_direccion_text">Nombre de la dirección</string>
@@ -18,9 +24,6 @@
     <string name="hint_cp">Ingrese el codigo postal</string>
     <string name="provincia_text">Provincia</string>
     <string name="hint_provincia">Ingrese la provincia</string>
-
-
-
 
 
 </resources>

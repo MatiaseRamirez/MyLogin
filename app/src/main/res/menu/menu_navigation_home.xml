@@ -4,7 +4,7 @@
     <group>
         <item android:id="@+id/nav_item_cards"
             android:icon="@drawable/ic_card"
-            android:title="Mis Tarjeras"/>
+            android:title="Mis Tarjetas"/>
 
         <item android:id="@+id/nav_item_addres"
             android:icon="@drawable/ic_addres"
@@ -21,6 +21,11 @@
         <item android:id="@+id/nav_item_claims"
             android:icon="@drawable/ic_claims"
             android:title="Reclamos"/>
+
+        <item
+            android:id="@+id/nav_item_menu"
+            android:icon="@drawable/ic_menu"
+            android:title="Menu" />
 
         <item android:id="@+id/nav_item_null"
             android:title=""/>

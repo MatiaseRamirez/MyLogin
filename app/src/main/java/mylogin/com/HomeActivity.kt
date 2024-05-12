@@ -14,6 +14,7 @@ import com.example.activityhome.fragments.AddresFragment
 import com.example.activityhome.fragments.ClaimsFragment
 import com.example.activityhome.fragments.FavoritesFragment
 import com.example.activityhome.fragments.PhoneFragment
+import com.example.activityhome.fragments.MenuFragment
 import com.google.android.material.navigation.NavigationView
 import mylogin.com.MainActivity
 import mylogin.com.R
@@ -70,8 +71,12 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 replaceFragment(ClaimsFragment())
             }
 
+            R.id.nav_item_menu -> {
+                replaceFragment(MenuFragment())
+            }
+
             R.id.nav_item_singoff -> {
-                Toast.makeText(this, "Errand Session", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Cerrando Session", Toast.LENGTH_SHORT).show()
                 val intent = Intent(this,MainActivity::class.java)
                 startActivity(intent)
             }
@@ -85,6 +90,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmentContainer, fragment)
         transaction.commit()
+    }
+
+    fun comprarButtonClick() {
+        // Aca va la lógica cuando se haga clic en el botón Comprar
     }
 
 }

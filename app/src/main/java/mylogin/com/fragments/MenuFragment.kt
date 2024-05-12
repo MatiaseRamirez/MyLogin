@@ -5,19 +5,24 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import mylogin.com.databinding.FragmentAddresBinding
+import mylogin.com.databinding.FragmentMenuBinding
 
-class AddresFragment : Fragment() {
 
-    private lateinit var binding: FragmentAddresBinding
+class MenuFragment : Fragment() {
+
+    private lateinit var binding: FragmentMenuBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAddresBinding.inflate(inflater, container, false)
+        binding = FragmentMenuBinding.inflate(inflater, container, false)
 
         return binding.root
     }
 
 
 }
+
+
+
+
