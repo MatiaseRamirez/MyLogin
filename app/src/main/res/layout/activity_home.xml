@@ -21,22 +21,16 @@
             android:background="@drawable/login_background"
             android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            />
-
-
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
         <LinearLayout
             android:id="@+id/fragmentContainer"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:background="@drawable/login_background"
-            />
-
+            android:background="@drawable/login_background" />
 
     </LinearLayout>
-
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navigationViewHome"
@@ -44,7 +38,24 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         app:headerLayout="@layout/nav_header_home"
-        app:menu="@menu/menu_navigation_home"
-        />
+        app:menu="@menu/menu_navigation_home">
+
+        <!-- Definir el botón de "Iniciar Sesión" después del menú -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/btnIniciarSesion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Iniciar Sesión"
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
