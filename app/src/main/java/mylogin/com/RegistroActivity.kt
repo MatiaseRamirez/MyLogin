@@ -26,12 +26,14 @@ class RegistroActivity : AppCompatActivity() {
         editTextNombreCompleto = findViewById(editTextTextNombreCompleto)
         editTextCorreo = findViewById(editTextTextEmailAddress)
         editTextContraseña = findViewById(editTextTextPassword3)
+
         val buttonRegistrar: Button = findViewById(button4)
-        val registerLink: TextView = findViewById(register_link)
+
+    /*    val registerLink: TextView = findViewById(register_link)
         registerLink.setOnClickListener {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse("form.xml"))
             startActivity(intent)
-        }
+        }*/
 
         class Usuario(val nombre: String, val correo: String, val contraseña: String)
 
