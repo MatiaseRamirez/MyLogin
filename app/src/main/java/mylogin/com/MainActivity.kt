@@ -10,7 +10,10 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import android.util.Log
 import android.widget.TextView
+import android.widget.Toast
 import com.example.activityhome.HomeActivity
+import com.google.gson.Gson
+import java.lang.Exception
 
 
 class MainActivity : AppCompatActivity() {
@@ -30,24 +33,59 @@ class MainActivity : AppCompatActivity() {
         loginBtn = findViewById(R.id.login_btn)
         twregister=findViewById(R.id.register_link)
 
-
+        val preferecias = getSharedPreferences(RegistroActivity.CREDENTIALS, MODE_PRIVATE)
+        /* autologin
+        val autoLogin = preferecias.getBoolean("autoLogin", false)
+         if (autoLogin == true) {
+            goToHomeActivity()
+         }
+        */
         twregister.setOnClickListener {
             val intent=Intent(this,RegistroActivity::class.java)
             startActivity(intent)
         }
 
-
-
         loginBtn.setOnClickListener{
             val username = usernameInput.text.toString()
             val password = passwordInput.text.toString()
             Log.i( "Test Credentials", "Username : $username and Password : $password")
-            val intent = Intent(this,HomeActivity::class.java)
-            startActivity(intent)
 
+            if (validateData(username, password) == true) {
+                goToHomeActivity()
+
+            } else {
+              //  edit.putBoolean("autoLogin", false)
+              //  edit.apply()
+                Toast.makeText(this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show()
+            }
+          /*  val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+*/
         }
 
 
 
     }
-}
+
+    private fun validateData(name: String?, password: String?): Boolean {
+        var user = Usuario("","","")
+        try {
+            val preferecias = getSharedPreferences(RegistroActivity.CREDENTIALS, MODE_PRIVATE)
+            val personJson = preferecias.getString("usuario", "")
+
+            val gson = Gson()
+            user = gson.fromJson(personJson, Usuario::class.java)
+
+        } catch (e: Exception) {
+        }
+
+        return if (name == user.name && password == user.password) {
+            true
+        } else {
+            false
+        }
+    }
+    private fun goToHomeActivity() {
+        val intent = Intent(this, HomeActivity::class.java)
+        startActivity(intent)
+    }}
