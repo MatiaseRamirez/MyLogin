@@ -1,13 +1,12 @@
 package mylogin.com
 
 import android.os.Bundle
-import android.widget.TextView
 import android.widget.Button
 import android.widget.EditText
 import android.content.Intent
-import android.net.Uri
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.gson.Gson
 import mylogin.com.R.*
 import mylogin.com.R.id.*
 import java.io.Serializable
@@ -70,14 +69,26 @@ class RegistroActivity : AppCompatActivity() {
                 Toast.makeText(this, "Por favor, complete todos los campos", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
+            //se crea el usuario para SharedPreferences
+
+            val preferences = getSharedPreferences(CREDENTIALS, MODE_PRIVATE)
+            val edit= preferences.edit()
+            val usuario=Usuario(name = nombreCompleto, email = correo, password = contraseña)
+            val gson= Gson()
+            val usuarioInJsonFormatter = gson.toJson(usuario)
+
+            edit.putString("usuario",usuarioInJsonFormatter)
+            edit.apply()
 
             val intent = Intent(this, MainActivity::class.java)
-            intent.putExtra("nombreCompleto", nombreCompleto)
-            intent.putExtra("correo", correo)
-            intent.putExtra("contraseña", contraseña)
+           // intent.putExtra("nombreCompleto", nombreCompleto)
+           // intent.putExtra("correo", correo)
+           // intent.putExtra("contraseña", contraseña)
             startActivity(intent)
-
             Toast.makeText(this, "Usuario creado con éxito", Toast.LENGTH_SHORT).show()
         }
+    }
+    companion object { //static
+        const val CREDENTIALS = "Credenciales"
     }
 }
