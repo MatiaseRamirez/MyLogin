@@ -93,7 +93,7 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         transaction.commit()
     }
 
-    fun comprarButtonClick() {
+    fun comprarButtonClick(context:String) {
         // Aca va la lógica cuando se haga clic en el botón Comprar
     }
 

@@ -55,7 +55,7 @@ class PhoneFragment : Fragment() {
 
                 edit.putString("phone", addressInJsonFormat)
                 edit.apply()
-                Toast.makeText(requireContext(), "Direccion Agregado!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(requireContext(), "Teléfono Agregado!", Toast.LENGTH_SHORT).show()
                 tvphone.setText("Numero de telefono : " + phone.tel)
                 tvphone.setVisibility(View.VISIBLE)
 
