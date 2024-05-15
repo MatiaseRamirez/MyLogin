@@ -1,5 +1,6 @@
 package com.example.activityhome.fragments
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
@@ -18,6 +19,7 @@ class AddresFragment : Fragment() {
 
     private lateinit var binding: FragmentAddresBinding
     private lateinit var tvaddres: TextView
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +31,7 @@ class AddresFragment : Fragment() {
         val preferences = requireActivity().getSharedPreferences(ADDRESSES, MODE_PRIVATE)
 
         val gson = Gson()
-        val addresJson = preferences.getString("addres", "No hay registro")
+        val addresJson = preferences.getString("addres", "")
 
         //PARTE DONDE  VALIDAR QUE EXISTE preferences
 
