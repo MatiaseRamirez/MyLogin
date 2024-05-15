@@ -39,7 +39,7 @@
         android:background="@drawable/rounded_corner"
         android:padding="18dp"
         android:gravity="center"
-        android:hint="Nombre Completo"
+        android:hint="Usuario"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textColor="@color/white"
         android:textColorHighlight="#AF9393"
