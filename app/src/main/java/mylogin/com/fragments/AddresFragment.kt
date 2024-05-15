@@ -36,7 +36,6 @@ class AddresFragment : Fragment() {
         //PARTE DONDE TIENE QUE VALIDAR QUE EXISTE preferences
 
         addres = gson.fromJson(addresJson, Addres::class.java)
-        val nohayarchivi=addresJson.get()
 
         if (addres.street == ""){
             addres = gson.fromJson(addresJson, Addres::class.java)
