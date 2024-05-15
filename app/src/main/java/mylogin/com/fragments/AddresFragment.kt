@@ -1,5 +1,6 @@
 package com.example.activityhome.fragments
 
+import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
 import android.os.Bundle
@@ -9,13 +10,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isInvisible
 import com.google.gson.Gson
 import mylogin.com.Addres
-import mylogin.com.R
 import mylogin.com.databinding.FragmentAddresBinding
-import java.time.temporal.ValueRange
 
 class AddresFragment : Fragment() {
 
@@ -30,32 +27,24 @@ class AddresFragment : Fragment() {
         tvaddres = binding.tvaddres
         var addres = Addres("", "", "", "")
         val preferences = requireActivity().getSharedPreferences(ADDRESSES, MODE_PRIVATE)
+
         val gson = Gson()
         val addresJson = preferences.getString("addres", "No hay registro")
 
-        //PARTE DONDE TIENE QUE VALIDAR QUE EXISTE preferences
+        //PARTE DONDE  VALIDAR QUE EXISTE preferences
 
-        addres = gson.fromJson(addresJson, Addres::class.java)
+       val archivoexiste =archivo(requireActivity(), ADDRESSES,"addres")
 
-        if (addres.street == ""){
+        if (archivoexiste){
+            Toast.makeText(requireContext(), "Existe registro guardado!", Toast.LENGTH_SHORT).show()
             addres = gson.fromJson(addresJson, Addres::class.java)
             tvaddres.setText(addresJson)
             tvaddres.setText("Direccion: " + addres.street + " " + addres.height + "\nCodigo Postal: " + addres.postalcode + "\nProvincia: " + addres.state)
-            //Capturar variable de SharedPreferences
             tvaddres.setVisibility(View.VISIBLE)
-
-        }else{
+            }else{
+                Toast.makeText(requireContext(), "No hay registro guardado", Toast.LENGTH_SHORT).show()
 
         }
-
-       /*elsa {
-            addres = gson.fromJson(addresJson, Addres::class.java)
-            tvaddres.setText(addresJson)
-            tvaddres.setText("Direccion: " + addres.street + " " + addres.height + "\nCodigo Postal: " + addres.postalcode + "\nProvincia: " + addres.state)
-            //Capturar variable de SharedPreferences
-            tvaddres.setVisibility(View.VISIBLE)
-        }*/
-
             binding.addresBtn.setOnClickListener {
                 val dirrecion = binding.direccionInput.text.toString()
                 val altura = binding.alturaInput.text.toString()
@@ -91,6 +80,10 @@ class AddresFragment : Fragment() {
     }
     companion object {
         const val ADDRESSES = "Direcciones"
+    }
+    fun archivo(context: Context, prefsName: String, key: String): Boolean {
+        val sharedPreferences: SharedPreferences = context.getSharedPreferences(prefsName, Context.MODE_PRIVATE)
+        return sharedPreferences.contains(key)
     }
 
 }
