@@ -57,7 +57,6 @@ class ClaimsFragment : Fragment() {
                 edit.apply()
                 Toast.makeText(requireContext(), "Reclamo Agregado!", Toast.LENGTH_SHORT).show()
                 tvclaim.setText("Titulo del Reclamo: " + claim.title+"\n Descripcion: "+claim.description)
-                tvclaim.setVisibility(View.VISIBLE)
 
             }  else {
                 Toast.makeText(requireContext(), "Debe completar todos los campos!", Toast.LENGTH_SHORT).show()

@@ -52,6 +52,8 @@ class CardFragment : Fragment() {
             val numero = binding.cardNumberInput.text.toString()
             val date=binding.expiryDateInput.text.toString()
             val name=binding.cardHolderNameInput.text.toString()
+
+
             if (validateFields(numero,date,name)) {
                 val edit = preferences.edit()
                 val card = Card(numero,date,name)

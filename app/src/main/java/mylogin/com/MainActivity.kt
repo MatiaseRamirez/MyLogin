@@ -33,13 +33,6 @@ class MainActivity : AppCompatActivity() {
         loginBtn = findViewById(R.id.login_btn)
         twregister=findViewById(R.id.register_link)
 
-        val preferecias = getSharedPreferences(RegistroActivity.CREDENTIALS, MODE_PRIVATE)
-        /* autologin
-        val autoLogin = preferecias.getBoolean("autoLogin", false)
-         if (autoLogin == true) {
-            goToHomeActivity()
-         }
-        */
         twregister.setOnClickListener {
             val intent=Intent(this,RegistroActivity::class.java)
             startActivity(intent)
@@ -51,16 +44,16 @@ class MainActivity : AppCompatActivity() {
             Log.i( "Test Credentials", "Username : $username and Password : $password")
 
             if (validateData(username, password) == true) {
-                goToHomeActivity()
+
+                val intent = Intent(this, HomeActivity::class.java)
+                intent.putExtra("name",)
+                startActivity(intent)
+              //  goToHomeActivity()
 
             } else {
-              //  edit.putBoolean("autoLogin", false)
-              //  edit.apply()
                 Toast.makeText(this, "Usuario o contraseña incorrecto", Toast.LENGTH_SHORT).show()
             }
-          /*  val intent = Intent(this,HomeActivity::class.java)
-            startActivity(intent)
-*/
+
         }
 
 
