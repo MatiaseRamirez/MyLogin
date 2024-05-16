@@ -46,7 +46,7 @@ class MainActivity : AppCompatActivity() {
             if (validateData(username, password) == true) {
 
                 val intent = Intent(this, HomeActivity::class.java)
-                intent.putExtra("name",)
+                intent.putExtra("name",username)
                 startActivity(intent)
               //  goToHomeActivity()
 
