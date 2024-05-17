@@ -40,10 +40,14 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
     // MenuFragment por defecto al iniciar la aplicación en el metodo OnCreate
+
+        val navigationView = binding.navigationViewHome
+        navigationView.setNavigationItemSelectedListener(this)
         replaceFragment(MenuFragment())
+
+
     //Recibe la variable enviada desde el MainActivity
         val username=intent.getStringExtra("username")
-        val navigationView: NavigationView = findViewById(R.id.navigationViewHome)
         val headerView = navigationView.getHeaderView(0)
         val textViewHeader: TextView = headerView.findViewById(R.id.tvNameNavigationHeader)
         textViewHeader.text=username
