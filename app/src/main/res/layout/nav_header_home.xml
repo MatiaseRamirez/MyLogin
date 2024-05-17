@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text=" - Usuario -"
         android:textSize="20sp"
-        android:layout_margin="8dp"
+        android:layout_margin="10dp"
         android:textStyle="bold"
         android:textColor="@color/white"
         app:layout_constraintLeft_toLeftOf="parent"

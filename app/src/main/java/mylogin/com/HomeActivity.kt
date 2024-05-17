@@ -3,6 +3,7 @@ package com.example.activityhome
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -19,13 +20,14 @@ import com.google.android.material.navigation.NavigationView
 import mylogin.com.MainActivity
 import mylogin.com.R
 import mylogin.com.databinding.ActivityHomeBinding
+import mylogin.com.databinding.NavHeaderHomeBinding
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
-
+    lateinit var bindingNav: NavHeaderHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityHomeBinding.inflate(layoutInflater)
@@ -42,13 +44,18 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
 
-       val navigationView = binding.navigationViewHome
-        navigationView.setNavigationItemSelectedListener(this)
-
-
+     //  val navigationView = binding.navigationViewHome
+    //    navigationView.setNavigationItemSelectedListener(this)
 
         // MenuFragment por defecto al iniciar la aplicación en el metodo OnCreate
-        replaceFragment(MenuFragment())
+      //  replaceFragment(MenuFragment())
+        val username=intent.getStringExtra("username")
+        //binding.tvName.text=username
+
+        val navigationView: NavigationView = findViewById(R.id.navigationViewHome)
+        val headerView = navigationView.getHeaderView(0)
+        val textViewHeader: TextView = headerView.findViewById(R.id.tvNameNavigationHeader)
+        textViewHeader.text=username
 
     }
 
