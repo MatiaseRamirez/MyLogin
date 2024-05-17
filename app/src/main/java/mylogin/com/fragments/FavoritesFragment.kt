@@ -1,4 +1,4 @@
-package com.example.activityhome.fragments
+package mylogin.com.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -30,7 +30,7 @@ class FavoritesFragment : Fragment() {
         val gson = Gson()
         val favoritesJson = preferences.getString("favorites", "")
 
-        val archivoexiste =AddresFragment().archivo(requireContext(), FAVORITES,"favorites")
+        val archivoexiste = AddresFragment().archivo(requireContext(), FAVORITES,"favorites")
 
         if (archivoexiste){
             Toast.makeText(requireContext(), "Existe registro guardado!", Toast.LENGTH_SHORT).show()

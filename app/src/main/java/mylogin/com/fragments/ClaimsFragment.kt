@@ -1,4 +1,4 @@
-package com.example.activityhome.fragments
+package mylogin.com.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -9,7 +9,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import com.google.gson.Gson
-import mylogin.com.Card
 import mylogin.com.Claim
 import mylogin.com.databinding.FragmentClaimsBinding
 
@@ -31,7 +30,7 @@ class ClaimsFragment : Fragment() {
         val gson = Gson()
         val claimJson = preferences.getString("claim", "")
 
-        val archivoexiste =AddresFragment().archivo(requireContext(), ClaimsFragment.CLAIMS,"claim")
+        val archivoexiste = AddresFragment().archivo(requireContext(), CLAIMS,"claim")
 
         if (archivoexiste){
             Toast.makeText(requireContext(), "Existe registro guardado!", Toast.LENGTH_SHORT).show()

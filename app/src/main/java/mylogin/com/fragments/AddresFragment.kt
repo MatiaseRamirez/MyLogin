@@ -1,4 +1,4 @@
-package com.example.activityhome.fragments
+package mylogin.com.fragments
 
 import android.annotation.SuppressLint
 import android.content.Context

@@ -1,4 +1,4 @@
-package com.example.activityhome.fragments
+package mylogin.com.fragments
 
 import android.content.Context
 import android.os.Bundle
@@ -10,7 +10,6 @@ import android.widget.TextView
 import android.widget.Toast
 import com.google.gson.Gson
 import mylogin.com.Card
-import mylogin.com.Phone
 import mylogin.com.databinding.FragmentCardBinding
 
 
@@ -29,13 +28,13 @@ class CardFragment : Fragment() {
 
         var card = Card(" ","","")
         val preferences =requireActivity().getSharedPreferences(
-            CardFragment.CARDS,
+            CARDS,
             Context.MODE_PRIVATE
         )
         val gson = Gson()
         val cardJson = preferences.getString("card", "")
 
-        val archivoexiste =AddresFragment().archivo(requireContext(), CARDS,"card")
+        val archivoexiste = AddresFragment().archivo(requireContext(), CARDS,"card")
 
         if (archivoexiste){
             Toast.makeText(requireContext(), "Existe registro guardado!", Toast.LENGTH_SHORT).show()

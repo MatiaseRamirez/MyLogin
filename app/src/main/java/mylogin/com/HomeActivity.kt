@@ -1,4 +1,4 @@
-package com.example.activityhome
+package mylogin.com
 
 import android.content.Intent
 import android.os.Bundle
@@ -10,24 +10,20 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
-import com.example.activityhome.fragments.CardFragment
-import com.example.activityhome.fragments.AddresFragment
-import com.example.activityhome.fragments.ClaimsFragment
-import com.example.activityhome.fragments.FavoritesFragment
-import com.example.activityhome.fragments.PhoneFragment
-import com.example.activityhome.fragments.MenuFragment
+import mylogin.com.fragments.CardFragment
+import mylogin.com.fragments.AddresFragment
+import mylogin.com.fragments.ClaimsFragment
+import mylogin.com.fragments.FavoritesFragment
+import mylogin.com.fragments.PhoneFragment
+import mylogin.com.fragments.MenuFragment
 import com.google.android.material.navigation.NavigationView
-import mylogin.com.MainActivity
-import mylogin.com.R
 import mylogin.com.databinding.ActivityHomeBinding
-import mylogin.com.databinding.NavHeaderHomeBinding
 
 class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private lateinit var binding: ActivityHomeBinding
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle
-    lateinit var bindingNav: NavHeaderHomeBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityHomeBinding.inflate(layoutInflater)
@@ -43,15 +39,10 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_menu)
-
-     //  val navigationView = binding.navigationViewHome
-    //    navigationView.setNavigationItemSelectedListener(this)
-
-        // MenuFragment por defecto al iniciar la aplicación en el metodo OnCreate
-      //  replaceFragment(MenuFragment())
+    // MenuFragment por defecto al iniciar la aplicación en el metodo OnCreate
+        replaceFragment(MenuFragment())
+    //Recibe la variable enviada desde el MainActivity
         val username=intent.getStringExtra("username")
-        //binding.tvName.text=username
-
         val navigationView: NavigationView = findViewById(R.id.navigationViewHome)
         val headerView = navigationView.getHeaderView(0)
         val textViewHeader: TextView = headerView.findViewById(R.id.tvNameNavigationHeader)
@@ -100,10 +91,6 @@ class HomeActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.fragmentContainer, fragment)
         transaction.commit()
-    }
-
-    fun comprarButtonClick(context:String) {
-        // Aca va la lógica cuando se haga clic en el botón Comprar
     }
 
 }
