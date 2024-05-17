@@ -68,7 +68,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:hint="@string/enter_expiry_date"
-        android:inputType="datetime"
         android:textColor="@color/white"
         android:textColorHint="@color/grey"
         android:autofillHints="creditCardExpirationDate"
@@ -77,6 +76,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
+        android:inputType="number"
+        android:digits="0123456789/"
         android:maxLength="7"/>
 
     <!-- Campo para el nombre del titular de la tarjeta -->

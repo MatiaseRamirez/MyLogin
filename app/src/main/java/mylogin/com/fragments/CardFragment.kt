@@ -6,8 +6,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.widget.addTextChangedListener
 import com.google.gson.Gson
 import mylogin.com.Card
 import mylogin.com.databinding.FragmentCardBinding
@@ -17,7 +19,7 @@ class CardFragment : Fragment() {
 
     private lateinit var binding:FragmentCardBinding
     private lateinit var tvcard: TextView
-
+    private lateinit var expiryDateInput:EditText
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +27,18 @@ class CardFragment : Fragment() {
     ): View? {
         binding= FragmentCardBinding.inflate(inflater,container,false)
         tvcard=binding.tvcard
+
+        expiryDateInput=binding.expiryDateInput
+
+
+        expiryDateInput.addTextChangedListener {
+            val text = it.toString()
+            if (text.length == 2) {
+                expiryDateInput.setText("$text/")
+                expiryDateInput.setSelection(text.length + 1)
+            }
+        }
+
 
         var card = Card(" ","","")
         val preferences =requireActivity().getSharedPreferences(
@@ -86,3 +100,5 @@ class CardFragment : Fragment() {
         const val CARDS = "Tarjetas"
     }
 }
+
+
